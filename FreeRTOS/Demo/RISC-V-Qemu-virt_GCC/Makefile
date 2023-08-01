@@ -1,4 +1,5 @@
-CROSS   = riscv64-unknown-elf-
+# CROSS   = riscv64-unknown-elf-
+CROSS   = riscv64-elf-
 CC      = $(CROSS)gcc
 OBJCOPY = $(CROSS)objcopy
 ARCH    = $(CROSS)ar
@@ -14,7 +15,7 @@ CPPFLAGS = \
 	-I $(RTOS_SOURCE_DIR)/include \
 	-I $(RTOS_SOURCE_DIR)/portable/GCC/RISC-V \
 	-I $(RTOS_SOURCE_DIR)/portable/GCC/RISC-V/chip_specific_extensions/RV32I_CLINT_no_extensions
-CFLAGS  = -march=rv32imac -mabi=ilp32 -mcmodel=medany \
+CFLAGS  = -march=rv32imac_zicsr -mabi=ilp32 -mcmodel=medany \
 	-Wall \
 	-fmessage-length=0 \
 	-ffunction-sections \
