@@ -4,9 +4,12 @@ IMAGE := RTOSDemo.elf
 # The directory that contains the /source and /demo sub directories.
 FREERTOS_ROOT = ./../../../..
 
-CC = riscv64-unknown-elf-gcc
-LD = riscv64-unknown-elf-gcc
-SIZE = riscv64-unknown-elf-size
+#CC = riscv64-unknown-elf-gcc
+CC = riscv64-elf-gcc
+#LD = riscv64-unknown-elf-gcc
+LD = riscv64-elf-gcc
+#SIZE = riscv64-unknown-elf-size
+SIZE = riscv64-elf-size
 MAKE = make
 
 CFLAGS += $(INCLUDE_DIRS) -DportasmHANDLE_INTERRUPT=handle_trap -fmessage-length=0 \
